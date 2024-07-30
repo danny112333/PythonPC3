@@ -25,6 +25,7 @@ class GestionBiblioteca:
     def buscar_por_autor(self, autor):
         return [libro for libro in self.libros if autor.lower() in libro.autor.lower()]
 #MAIN
+
 from libro import Libro
 from gestion import GestionBiblioteca
 
@@ -37,4 +38,31 @@ def menu():
         print("4. Buscar un libro según su autor")
         print("5. Salir")
         opcion = input("Seleccione una opción: ")
+        
+        if opcion == '1':
+            titulo = input("Ingrese el título del libro: ")
+            autor = input("Ingrese el autor del libro: ")
+            isbn = input("Ingrese el ISBN del libro: ")
+            libro = Libro(titulo, autor, isbn)
+            biblioteca.agregar_libro(libro)
+        elif opcion == '2':
+            biblioteca.listar_libros()
+        elif opcion == '3':
+            titulo = input("Ingrese el título del libro: ")
+            libros = biblioteca.buscar_por_titulo(titulo)
+            for libro in libros:
+                print(libro)
+        elif opcion == '4':
+            autor = input("Ingrese el autor del libro: ")
+            libros = biblioteca.buscar_por_autor(autor)
+            for libro in libros:
+                print(libro)
+        elif opcion == '5':
+            break
+        else:
+            print("Opción no válida. Intente nuevamente.")
+
+if __name__ == '__main__':
+    menu()
+
         
