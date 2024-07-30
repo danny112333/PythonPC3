@@ -1,0 +1,21 @@
+class Alumno:
+    def __init__(self, nombre, numero_registro):
+        self.nombre = nombre
+        self.numero_registro = numero_registro
+        self.edad = None
+        self.nota = None
+
+    def display(self):
+        print(f"Nombre: {self.nombre}, Número de Registro: {self.numero_registro}, Edad: {self.edad}, Nota: {self.nota}")
+    
+    def set_age(self, edad):
+        self.edad = edad
+    
+    def set_nota(self, nota):
+        self.nota = nota
+
+if __name__ == '__main__':
+    alumno = Alumno("Juan", "12345")
+    alumno.set_age(20)
+    alumno.set_nota(95)
+    alumno.display()
