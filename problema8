@@ -1,3 +1,4 @@
+#OPERACIONES
 def suma(a, b):
     try:
         return a + b
@@ -23,3 +24,12 @@ def division(a, b):
         return "Error: Tipo de dato no válido."
     except ZeroDivisionError:
         return "Error: No es posible dividir entre cero."
+
+#RESULTADOS 
+import operaciones
+
+if __name__ == '__main__':
+    print(operaciones.suma(10, 5))
+    print(operaciones.resta(10, 5))
+    print(operaciones.producto(10, 5))
+    print(operaciones.division(10, 0))
