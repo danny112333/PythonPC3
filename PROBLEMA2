@@ -1,0 +1,12 @@
+def get_grades():
+    while True:
+        try:
+            grades = input("Ingrese una lista de calificaciones separadas por comas: ")
+            grades_list = [int(grade) for grade in grades.split(',')]
+            print("Lista de calificaciones:", grades_list)
+            break
+        except ValueError:
+            print("Error: Asegúrese de que todas las calificaciones sean números enteros.")
+
+if __name__ == '__main__':
+    get_grades()
