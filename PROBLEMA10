@@ -1,0 +1,40 @@
+#LIBROPY
+class Libro:
+    def __init__(self, titulo, autor, isbn):
+        self.titulo = titulo
+        self.autor = autor
+        self.isbn = isbn
+    
+    def __str__(self):
+        return f"{self.titulo} por {self.autor} (ISBN: {self.isbn})"
+#GESTION
+class GestionBiblioteca:
+    def __init__(self):
+        self.libros = []
+
+    def agregar_libro(self, libro):
+        self.libros.append(libro)
+
+    def listar_libros(self):
+        for libro in self.libros:
+            print(libro)
+
+    def buscar_por_titulo(self, titulo):
+        return [libro for libro in self.libros if titulo.lower() in libro.titulo.lower()]
+
+    def buscar_por_autor(self, autor):
+        return [libro for libro in self.libros if autor.lower() in libro.autor.lower()]
+#MAIN
+from libro import Libro
+from gestion import GestionBiblioteca
+
+def menu():
+    biblioteca = GestionBiblioteca()
+    while True:
+        print("1. Agregar un libro a nuestra biblioteca")
+        print("2. Listar los libros en nuestra biblioteca")
+        print("3. Buscar un libro según su título")
+        print("4. Buscar un libro según su autor")
+        print("5. Salir")
+        opcion = input("Seleccione una opción: ")
+        
